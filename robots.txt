@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atlasvanguard-bvwax1.freebuff.site/sitemap.xml
