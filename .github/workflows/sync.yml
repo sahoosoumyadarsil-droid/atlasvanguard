@@ -22,7 +22,7 @@ jobs:
           for f in index.html styles.css main.js robots.txt sitemap.xml; do
             curl -fsSL "$base/$f?cb=$GITHUB_RUN_ID" -o "$f"
           done
-          for f in logo.png bg-art.jpg; do
+          for f in logo.png bg-art.jpg emblem.jpg; do
             curl -fsSL "$base/assets/$f?cb=$GITHUB_RUN_ID" -o "assets/$f"
           done
           ls -laR
@@ -31,5 +31,5 @@ jobs:
           git config user.name "atlasvanguard-bot"
           git config user.email "actions@users.noreply.github.com"
           git add index.html styles.css main.js robots.txt sitemap.xml assets
-          git commit -m "Add site files" || echo "nothing to commit"
+          git commit -m "Refresh site files from the live site" || echo "nothing to commit"
           git push
